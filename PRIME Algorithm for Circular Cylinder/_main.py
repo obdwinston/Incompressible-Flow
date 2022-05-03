@@ -6,7 +6,7 @@ import matplotlib.colors as clr
 
 U = 1.0  # inlet velocity [m/s]
 nu = 0.01  # kinematic viscosity [m2/s]
-L = 0.2  # characteristic length [m]
+D = 0.2  # characteristic length [m]
 
 itr = 5000  # number of iterations
 prf = 1.0  # pressure relaxation factor
@@ -786,7 +786,7 @@ for i in boundary_faces:
     n2y = nodes[faces[i][1]][1]  # face node 2 y-coordinate
     plt.plot([n1x, n2x], [n1y, n2y], c='black', lw=1.0)
 
-plt.title('Re = %d, U = %.1f m/s, ν = %.3f m²/s' % (U*L/nu, U, nu), fontweight='bold')
+plt.title('Re = %d, U = %.1f m/s, ν = %.3f m²/s' % (U*D/nu, U, nu), fontweight='bold')
 plt.xlabel('Channel Length [m]')
 plt.ylabel('Channel Height [m]')
 plt.axis('equal')
