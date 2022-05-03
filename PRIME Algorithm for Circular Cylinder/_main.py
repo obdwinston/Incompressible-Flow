@@ -6,7 +6,7 @@ import matplotlib.colors as clr
 
 U = 1.0  # inlet velocity [m/s]
 nu = 0.01  # kinematic viscosity [m2/s]
-D = 0.2  # characteristic length [m]
+D = 0.2  # cylinder diameter [m]
 
 itr = 5000  # number of iterations
 prf = 1.0  # pressure relaxation factor
