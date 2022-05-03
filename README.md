@@ -30,4 +30,4 @@
 
 ![Figure 3](https://user-images.githubusercontent.com/104728656/166154832-c7ff5ac7-df72-4c74-b11e-06c73f407f01.png)
 
-![Figure 4](https://user-images.githubusercontent.com/104728656/166154864-108d54b5-5db0-487e-b9e8-975dffd3fc32.png)
+![Figure 4](https://user-images.githubusercontent.com/104728656/166428131-4c008a11-1295-40a7-af53-d61df99c3171.png)
