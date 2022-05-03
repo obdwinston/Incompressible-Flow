@@ -46,4 +46,3 @@ Physical Curve("OBJECT", 10) = {5, 6, 7, 8};
 Physical Curve("INLET", 11) = {4};
 //+
 Physical Curve("OUTLET", 12) = {2};
-//+
