@@ -1,6 +1,6 @@
 # PRIME Algorithm for Circular Cylinder
 
-![Figure 1](https://user-images.githubusercontent.com/104728656/166154795-a2c2f552-84bd-47cf-a7e0-a0afd35d1a78.png)
+![Figure 1](https://user-images.githubusercontent.com/104728656/166450612-c7372f9b-b101-48fe-b2d3-8f51e8ba4bc4.png)
 
 ![Figure 2](https://user-images.githubusercontent.com/104728656/166154801-38149220-ac17-4c17-b148-3ff7f406d703.png)
 
@@ -27,6 +27,9 @@
   - Geometry → Physical Groups → Add → Curve
   - export and save as .SU2 mesh file
   - File → Export → Save → Save all elements
+- OpenFOAM verification for speed distribution
+  - SimpleFOAM (Laminar) → U<sub>min</sub> = 0.0039074 m/s, U<sub>max</sub> = 1.68126 m/s
+  - PRIME Algorithm → U<sub>min</sub> = 0.0057518 m/s, U<sub>max</sub> = 1.68645 m/s
 
 ![Figure 3](https://user-images.githubusercontent.com/104728656/166154832-c7ff5ac7-df72-4c74-b11e-06c73f407f01.png)
 
