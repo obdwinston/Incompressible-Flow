@@ -14,6 +14,9 @@
 - over-relaxed approach for cross-diffusion term
 - deferred correction for anti-diffusive convection and cross-diffusion terms
 - Gauss-Seidel method for pressure correction equation
+- flow conditions
+  - Re = 20, U = 1.0 m/s, ν = 0.01 m²/s
+  - H = 1.0 m, L = 3.0 m, D = 0.2 m
 - boundary conditions
   - u = U and v = 0 at inlet boundary
   - u = 0 and v = 0 at wall and object boundaries
