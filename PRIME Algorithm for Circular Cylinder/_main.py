@@ -746,7 +746,7 @@ for n in range(itr):
     mf_out = 0.0
     for fi in outlet_faces:
         mf_out += mf[fi]
-    err[n] = (mf_out - mf_in)/mf_in * 100
+    err[n] = (mf_out - mf_in)/mf_in*100
     print('Iteration = %d, Global Mass Imbalance (%%) = %.5f' % (n, err[n]))
 
 ###############
