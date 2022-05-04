@@ -757,7 +757,7 @@ for n in range(itr):
 plt.plot(err)
 plt.title('Global Mass Imbalance', fontweight='bold')
 plt.xlabel('Iteration')
-plt.ylabel('Imbalance (%)')
+plt.ylabel('Imbalance [%]')
 plt.grid('on')
 plt.show()
 
