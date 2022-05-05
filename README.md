@@ -40,7 +40,7 @@
 
 # Projection Method for Square Cylinder
 
-https://user-images.githubusercontent.com/104728656/166970972-41cf3e86-283e-4a9e-845f-0694dc1f08b0.mp4
+https://user-images.githubusercontent.com/104728656/166971946-f94a377e-c815-4f23-ada1-ef3f7ecc6f37.mp4
 
 - fractional step projection method by Chorin (1967)
 - 2D unsteady incompressible viscous laminar flow
