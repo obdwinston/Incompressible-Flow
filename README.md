@@ -58,7 +58,7 @@ https://user-images.githubusercontent.com/104728656/166882734-9c484f5a-02ed-4db9
   - p = 0 at outlet boundary
   - dp/dn = 0 at inlet, wall, and object boundaries
 - OpenFOAM verification for vortex shedding frequency
-  - IcoFOAM → St ≈ 0.21
+  - IcoFOAM → St ≈ 0.22
   - Projection Method → St ≈ 0.20
 
 ![Figure 1](https://user-images.githubusercontent.com/104728656/166877617-8a88d143-b129-4485-8883-5bfbba8ff17c.png)
