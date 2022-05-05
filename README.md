@@ -37,3 +37,12 @@
 ![Figure 3](https://user-images.githubusercontent.com/104728656/166154832-c7ff5ac7-df72-4c74-b11e-06c73f407f01.png)
 
 ![Figure 4](https://user-images.githubusercontent.com/104728656/166466869-2388b035-9774-4404-86e9-08338cc54db9.png)
+
+# Projection Method for Square Cylinder
+
+https://user-images.githubusercontent.com/104728656/166876976-11eb546d-6c91-4bab-9f70-8630f2da2918.mp4
+
+![Figure 1](https://user-images.githubusercontent.com/104728656/166877617-8a88d143-b129-4485-8883-5bfbba8ff17c.png)
+
+![Figure 2](https://user-images.githubusercontent.com/104728656/166877693-a11d824e-4ae9-4f4f-9c1a-13eed8e32652.png)
+
