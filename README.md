@@ -40,7 +40,26 @@
 
 # Projection Method for Square Cylinder
 
-https://user-images.githubusercontent.com/104728656/166876976-11eb546d-6c91-4bab-9f70-8630f2da2918.mp4
+https://user-images.githubusercontent.com/104728656/166882734-9c484f5a-02ed-4db9-a192-2603c77c3e7f.mp4
+
+- fractional step projection method by Chorin (1967)
+- 2D unsteady incompressible viscous laminar flow
+- finite volume method on staggered grid
+- first-order upwind scheme for convection term
+- second-order central differencing scheme for diffusion term
+- Gauss-Seidel method for pressure correction equation
+- flow conditions
+  - Re = 100, U = 5.0 m/s, ν = 0.01 m²/s
+  - H = 1.0 m, L = 3.0 m, D = 0.2 m
+- boundary conditions
+  - u = U and v = 0 at inlet boundary
+  - u = 0 and v = 0 at wall and object boundaries
+  - du/dn = 0 and dv/dn = 0 at outlet boundary
+  - p = 0 at outlet boundary
+  - dp/dn = 0 at inlet, wall, and object boundaries
+- OpenFOAM verification for vortex shedding frequency
+  - IcoFOAM → St ≈ 0.21
+  - Projection Method → St ≈ 0.20
 
 ![Figure 1](https://user-images.githubusercontent.com/104728656/166877617-8a88d143-b129-4485-8883-5bfbba8ff17c.png)
 
