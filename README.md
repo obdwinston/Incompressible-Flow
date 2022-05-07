@@ -4,7 +4,7 @@
 
 - PRessure Implicit Momentum Explicit (PRIME) algorithm by Maliska and Raithby (1984)
 - 2D steady incompressible viscous laminar flow
-- finite volume method on collocated grid
+- finite volume method on collocated unstructured triangle mesh
 - Rhie-Chow interpolation to suppress chequerboard oscillations
 - volume-based interpolation for cell face values
 - Green-Gauss method for gradient computation
@@ -44,7 +44,7 @@ https://user-images.githubusercontent.com/104728656/167190203-dae0d4c2-c8b0-4d87
 
 - fractional step projection method by Chorin (1967)
 - 2D unsteady incompressible viscous laminar flow
-- finite volume method on staggered grid
+- finite volume method on staggered mesh
 - first-order upwind scheme for convection term
 - second-order central differencing scheme for diffusion term
 - Gauss-Seidel method for pressure correction equation
