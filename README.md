@@ -26,7 +26,7 @@
 - GMSH program required for mesh generation
   - label 'Physical Curve' boundaries as 'WALL', 'OBJECT', 'INLET', and 'OUTLET'
   - Geometry → Physical Groups → Add → Curve
-  - export and save as .SU2 mesh file
+  - export and save as .su2 mesh file
   - File → Export → Save → Save all elements
 - OpenFOAM verification for speed distribution
   - SimpleFOAM (Laminar) → U<sub>min</sub> = 0.0039074 m/s, U<sub>max</sub> = 1.68126 m/s
