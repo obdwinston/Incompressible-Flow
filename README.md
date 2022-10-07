@@ -1,6 +1,6 @@
 # PRIME Algorithm for Circular Cylinder
 
-![Figure 1](https://user-images.githubusercontent.com/104728656/194480861-8bc7d56b-e0ab-40e8-a1c1-642811e43858.png)
+![Figure 1](https://user-images.githubusercontent.com/104728656/194483295-bceea236-fdaa-492e-8df8-692a40c5afd6.png)
 
 - PRessure Implicit Momentum Explicit (PRIME) algorithm by Maliska and Raithby (1984)
 - 2D steady incompressible viscous laminar flow
