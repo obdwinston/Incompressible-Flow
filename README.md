@@ -36,7 +36,7 @@
 
 ![Figure 3](https://user-images.githubusercontent.com/104728656/166154832-c7ff5ac7-df72-4c74-b11e-06c73f407f01.png)
 
-![Figure 4](https://user-images.githubusercontent.com/104728656/166466869-2388b035-9774-4404-86e9-08338cc54db9.png)
+![Figure 4](https://user-images.githubusercontent.com/104728656/230038008-f9b0f2f6-62cf-465d-a5d5-bf26551c865c.png)
 
 # Projection Method for Square Cylinder
 
