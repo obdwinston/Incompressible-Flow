@@ -10,7 +10,7 @@ check = False  # check mesh
 data = 'data/'  # data folder
 interval = 50  # data interval
 resolution = 1000  # data resolution
-factor = 3  # time factor
+factor = 3  # duration factor
 
 U = 5.  # inlet x-velocity [m/s]
 V = 0.  # inlet y-velocity [m/s]
