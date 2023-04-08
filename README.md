@@ -1,4 +1,4 @@
-# PRIME Algorithm for Circular Cylinder
+# PRIME Algorithm
 
 ![Figure 1](https://user-images.githubusercontent.com/104728656/194483295-bceea236-fdaa-492e-8df8-692a40c5afd6.png)
 
@@ -38,7 +38,16 @@
 
 ![Figure 4](https://user-images.githubusercontent.com/104728656/230038008-f9b0f2f6-62cf-465d-a5d5-bf26551c865c.png)
 
-# Projection Method for Square Cylinder
+# Projection Method
+
+## Unstructured Grid
+
+> Animation coming soon
+> Fortran version coming soon
+
+![Figure 1](https://user-images.githubusercontent.com/104728656/230711720-3a2b95e6-af71-404a-a785-a8d7f183f975.png)
+
+## Structured Grid
 
 https://user-images.githubusercontent.com/104728656/167190203-dae0d4c2-c8b0-4d87-b88a-5a7cd427a54a.mp4
 
