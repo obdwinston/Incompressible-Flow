@@ -44,10 +44,6 @@
 
 - Fortran code coming soon
 
-https://user-images.githubusercontent.com/104728656/230762249-33ee50d4-2a89-449b-9919-cab3886ddaed.mp4
-
-<br>
-
 ![image](https://user-images.githubusercontent.com/104728656/230762199-63650e6e-1055-4c30-b822-fc7292dc9cde.png)
 
 ## Structured Grid
