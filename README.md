@@ -46,8 +46,7 @@ https://user-images.githubusercontent.com/104728656/230766064-31efa065-57d8-4287
 
 <br>
 
-- Python code available
-- Fortran code coming soon
+NOTE: Python should only be used for prototyping. Fortran has far superior simulation speed.
 
 ![image](https://user-images.githubusercontent.com/104728656/230762199-63650e6e-1055-4c30-b822-fc7292dc9cde.png)
 
