@@ -10,11 +10,6 @@ check = False  # check mesh
 data = 'data/'  # data folder
 interval = 50  # data interval
 
-res = 1000  # figure resolution
-minval = 0.  # figure minimum value
-maxval = 8.5  # figure maximum value
-fac = 3  # animation duration multiplier
-
 U = 5.  # inlet x-velocity [m/s]
 V = 0.  # inlet y-velocity [m/s]
 nu = .01  # kinematic viscosity [m2/s]
@@ -24,6 +19,10 @@ dt = 1e-4  # time step [s]
 L = 3.  # domain length [m]
 H = 1.  # domain height [m]
 D = .2  # characteristic length [m]
+res = 1000  # figure resolution
+minval = 0.  # figure minimum value
+maxval = 8.5  # figure maximum value
+fac = 3  # animation duration multiplier
 
 # program start
 
