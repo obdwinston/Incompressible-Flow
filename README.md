@@ -1,6 +1,6 @@
 # PRIME Algorithm
 
-![Figure 1](https://user-images.githubusercontent.com/104728656/194483295-bceea236-fdaa-492e-8df8-692a40c5afd6.png)
+![image](https://user-images.githubusercontent.com/104728656/194483295-bceea236-fdaa-492e-8df8-692a40c5afd6.png)
 
 - PRessure Implicit Momentum Explicit (PRIME) algorithm by Maliska and Raithby (1984)
 - 2D steady incompressible viscous laminar flow
@@ -32,11 +32,11 @@
   - SimpleFOAM (Laminar) → U<sub>min</sub> = 0.0039074 m/s, U<sub>max</sub> = 1.68126 m/s
   - PRIME Algorithm → U<sub>min</sub> = 0.0057518 m/s, U<sub>max</sub> = 1.68645 m/s
 
-![Figure 2](https://user-images.githubusercontent.com/104728656/166672492-2b16dc79-8307-4d7a-9168-df67b9aacc0d.png)
+![image](https://user-images.githubusercontent.com/104728656/166672492-2b16dc79-8307-4d7a-9168-df67b9aacc0d.png)
 
-![Figure 3](https://user-images.githubusercontent.com/104728656/166154832-c7ff5ac7-df72-4c74-b11e-06c73f407f01.png)
+![image](https://user-images.githubusercontent.com/104728656/166154832-c7ff5ac7-df72-4c74-b11e-06c73f407f01.png)
 
-![Figure 4](https://user-images.githubusercontent.com/104728656/230038008-f9b0f2f6-62cf-465d-a5d5-bf26551c865c.png)
+![image](https://user-images.githubusercontent.com/104728656/230038008-f9b0f2f6-62cf-465d-a5d5-bf26551c865c.png)
 
 # Projection Method
 
@@ -46,11 +46,15 @@
 
 https://user-images.githubusercontent.com/104728656/230762249-33ee50d4-2a89-449b-9919-cab3886ddaed.mp4
 
+<br>
+
 ![image](https://user-images.githubusercontent.com/104728656/230762199-63650e6e-1055-4c30-b822-fc7292dc9cde.png)
 
 ## Structured Grid
 
 https://user-images.githubusercontent.com/104728656/167190203-dae0d4c2-c8b0-4d87-b88a-5a7cd427a54a.mp4
+
+<br>
 
 - fractional step projection method by Chorin (1967)
 - 2D unsteady incompressible viscous laminar flow
@@ -71,10 +75,10 @@ https://user-images.githubusercontent.com/104728656/167190203-dae0d4c2-c8b0-4d87
   - IcoFOAM → St ≈ 0.22
   - Projection Method → St ≈ 0.20
 
-![Figure 1](https://user-images.githubusercontent.com/104728656/166877617-8a88d143-b129-4485-8883-5bfbba8ff17c.png)
+![image](https://user-images.githubusercontent.com/104728656/166877617-8a88d143-b129-4485-8883-5bfbba8ff17c.png)
 
-![Figure 2](https://user-images.githubusercontent.com/104728656/167041265-ce5f4591-1622-456f-bef0-c0d16196355e.png)
+![image](https://user-images.githubusercontent.com/104728656/167041265-ce5f4591-1622-456f-bef0-c0d16196355e.png)
 
-![Figure 3](https://user-images.githubusercontent.com/104728656/167041276-be49a522-9739-4686-8f5c-9c220dc8989e.png)
+![image](https://user-images.githubusercontent.com/104728656/167041276-be49a522-9739-4686-8f5c-9c220dc8989e.png)
 
-![Figure 4](https://user-images.githubusercontent.com/104728656/167041325-4de01f47-c319-4e33-9d88-e7efdb2d312f.png)
+![image](https://user-images.githubusercontent.com/104728656/167041325-4de01f47-c319-4e33-9d88-e7efdb2d312f.png)
