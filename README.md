@@ -41,7 +41,7 @@ https://user-images.githubusercontent.com/104728656/167190203-dae0d4c2-c8b0-4d87
 
 ![image](https://user-images.githubusercontent.com/104728656/167041276-be49a522-9739-4686-8f5c-9c220dc8989e.png)
 
-![image](https://user-images.githubusercontent.com/104728656/167041325-4de01f47-c319-4e33-9d88-e7efdb2d312f.png)
+![image](https://user-images.githubusercontent.com/104728656/230991457-257f93de-4fcc-455b-9b62-13a8ffbf3346.png)
 
 # PRIME Algorithm
 
