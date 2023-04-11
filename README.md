@@ -6,16 +6,6 @@ https://user-images.githubusercontent.com/104728656/230766064-31efa065-57d8-4287
 
 <br>
 
-Possible improvements:
-- The face values in the convection term are interpolated based on a centred scheme. At higher convective speeds, the simulation may introduce oscillations and/or become unstable. A high-order TVD upwind scheme is preferred to better encapsulate convection flow physics. Examples of flux-limiting schemes include minmod, superbee, van Leer, MUSCL, etc.
-- There is no mechanism to suppress unphysical pressure chequerboard oscillations. A staggered grid (more complex for unstructured grids) or the Rhie-Chow interpolation method may be employed to suppress such oscillations. However, I may argue that this effect is more apparent for structured Cartesian grids (I could be wrong).
-- The pressure Poisson equation neglects the cross-diffusion term. This was done to save on numerical effort to compute pressure node values. For "completeness", this should be added into the source term as a deferred correction.
-- And many more...
-
-Admittedly, this simple solver is not the most robust one. It is fast and effective for "well-behaved" low Re laminar flows, but quickly becomes unstable for more complex geometries at higher speeds.
-
-NOTE: Python should only be used for prototyping. Fortran has far superior simulation speed.
-
 ![image](https://user-images.githubusercontent.com/104728656/231074293-5c1983cf-59b3-4a89-bf66-9be1b808649f.png)
 
 ## Structured Grid
