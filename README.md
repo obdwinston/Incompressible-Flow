@@ -10,30 +10,9 @@ https://user-images.githubusercontent.com/104728656/230766064-31efa065-57d8-4287
 
 ## Structured Grid
 
-https://user-images.githubusercontent.com/104728656/167190203-dae0d4c2-c8b0-4d87-b88a-5a7cd427a54a.mp4
+https://user-images.githubusercontent.com/104728656/235144692-14626735-0db5-4f1c-adee-e7f91232bd3d.mp4
 
 <br>
-
-- fractional step projection method by Chorin (1967)
-- 2D unsteady incompressible viscous laminar flow
-- finite volume method on staggered mesh
-- first-order upwind scheme for convection term
-- second-order central differencing scheme for diffusion term
-- Gauss-Seidel method for pressure correction equation
-- flow conditions
-  - Re = 100, U = 5.0 m/s, ν = 0.01 m²/s
-  - H = 1.0 m, L = 3.0 m, D = 0.2 m
-- boundary conditions
-  - u = U and v = 0 at inlet boundary
-  - u = 0 and v = 0 at wall and object boundaries
-  - du/dn = 0 and dv/dn = 0 at outlet boundary
-  - p = 0 at outlet boundary
-  - dp/dn = 0 at inlet, wall, and object boundaries
-- OpenFOAM verification for vortex shedding frequency
-  - IcoFOAM → St ≈ 0.22
-  - Projection Method → St ≈ 0.20
-
-![image](https://user-images.githubusercontent.com/104728656/166877617-8a88d143-b129-4485-8883-5bfbba8ff17c.png)
 
 ![image](https://user-images.githubusercontent.com/104728656/167041265-ce5f4591-1622-456f-bef0-c0d16196355e.png)
 
