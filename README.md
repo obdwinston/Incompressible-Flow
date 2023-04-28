@@ -10,11 +10,7 @@ https://user-images.githubusercontent.com/104728656/230766064-31efa065-57d8-4287
 
 ## Structured Grid
 
-
-
 https://user-images.githubusercontent.com/104728656/235146230-8f9cf225-76e0-4bca-a314-b8f7f8810913.mp4
-
-
 
 <br>
 
@@ -22,7 +18,7 @@ https://user-images.githubusercontent.com/104728656/235146230-8f9cf225-76e0-4bca
 
 ![image](https://user-images.githubusercontent.com/104728656/167041276-be49a522-9739-4686-8f5c-9c220dc8989e.png)
 
-![image](https://user-images.githubusercontent.com/104728656/230991457-257f93de-4fcc-455b-9b62-13a8ffbf3346.png)
+![image](https://user-images.githubusercontent.com/104728656/235148681-e988b0a4-32aa-41ad-8983-a6a6a2b24b1c.png)
 
 # PRIME Algorithm
 
