@@ -10,8 +10,6 @@ https://user-images.githubusercontent.com/104728656/230766064-31efa065-57d8-4287
 
 ## Structured Grid
 
-https://user-images.githubusercontent.com/104728656/235145239-33836077-22aa-4ba7-99f3-881ca5e43300.mp4
-
 <br>
 
 ![image](https://user-images.githubusercontent.com/104728656/167041265-ce5f4591-1622-456f-bef0-c0d16196355e.png)
