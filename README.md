@@ -4,15 +4,11 @@
 
 https://user-images.githubusercontent.com/104728656/230766064-31efa065-57d8-4287-a444-6dd2405f1aba.mp4
 
-<br>
-
 ![image](https://user-images.githubusercontent.com/104728656/231074293-5c1983cf-59b3-4a89-bf66-9be1b808649f.png)
 
 ## Structured Grid
 
 https://user-images.githubusercontent.com/104728656/235156443-2e418da3-a3c2-4439-a220-5d48d6e6f216.mp4
-
-<br>
 
 ![image](https://user-images.githubusercontent.com/104728656/167041265-ce5f4591-1622-456f-bef0-c0d16196355e.png)
 
