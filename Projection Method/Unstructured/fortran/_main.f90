@@ -341,8 +341,8 @@ program main
 
     ! save mesh
 
+    open(100, file=trim(folder)//'cc.txt')
     do i = 1, n_cells
-        open(100, file=trim(folder)//'cc.txt')
         write(100, *) cc(i, 1), cc(i, 2)
     end do
 
