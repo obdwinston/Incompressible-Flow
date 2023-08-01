@@ -43,6 +43,6 @@ Physical Curve("INLET", 9) = {4};
 //+
 Physical Curve("OUTLET", 10) = {2};
 //+
-Physical Curve("WALL", 11) = {3, 1};
+Physical Curve("WALL", 11) = {1, 3};
 //+
 Physical Curve("BODY", 12) = {5, 6, 7, 8};
