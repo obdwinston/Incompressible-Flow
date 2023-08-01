@@ -33,6 +33,12 @@ Circle(7) = {8, 5, 9};
 //+
 Circle(8) = {9, 5, 6};
 //+
+Curve Loop(1) = {1, 2, 3, 4};
+//+
+Curve Loop(2) = {5, 6, 7, 8};
+//+
+Plane Surface(1) = {1, 2};
+//+
 Physical Curve("INLET", 9) = {4};
 //+
 Physical Curve("OUTLET", 10) = {2};
@@ -40,9 +46,3 @@ Physical Curve("OUTLET", 10) = {2};
 Physical Curve("WALL", 11) = {3, 1};
 //+
 Physical Curve("BODY", 12) = {5, 6, 7, 8};
-//+
-Curve Loop(1) = {3, 4, 1, 2};
-//+
-Curve Loop(2) = {5, 6, 7, 8};
-//+
-Plane Surface(1) = {1, 2};
