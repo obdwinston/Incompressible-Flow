@@ -84,8 +84,8 @@ program main
         call system_clock(ce)
         
         if (mod(n, config % nw) == 0) then
-            write(stdout, *) minval(Uc(:, 1)), maxval(Uc(:, 1))
-            write(stdout, *) minval(Uc(:, 2)), maxval(Uc(:, 2))
+            write(stdout, *) 'umin=', minval(Uc(:, 1)), 'umax=', maxval(Uc(:, 1))
+            write(stdout, *) 'vmin=', minval(Uc(:, 2)), 'vmax=', maxval(Uc(:, 2))
             call set_elapsed(ts, te, cs, ce, cr)
             call set_duration(config % nt, config % dt, ts, te, n)
             call set_data(Uc, pc, msh, n)

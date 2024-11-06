@@ -6,7 +6,7 @@ from scipy.interpolate import griddata
 xb = [1., 4.]       # grid x-bounds
 yb = [1., 2.]       # grid y-bounds
 fsz = [12, 4]       # figure size
-res = 200           # grid resolution
+res = 400           # grid resolution
 fps = 100           # frames per second
 
 # read configuration
