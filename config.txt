@@ -1,7 +1,7 @@
 Re=     10000.      ! freestream Reynolds number
 Pe=     5.          ! local Peclet number threshold
-nk=     5           ! Gauss-Seidel iterations
+nk=     10          ! Gauss-Seidel iterations
 dt=     .0001       ! time step
-nt=     500000      ! time iterations
+nt=     250000      ! time iterations
 nw=     100         ! write interval
-CFL=    .1          ! Courant-Friedrich-Lewy number
+CFL=    .1          ! CFL number (set 0. for fixed time step)

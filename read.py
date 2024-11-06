@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from scipy.interpolate import griddata
 
-xb = [0., 5.]       # grid x-bounds
-yb = [0., 3.]       # grid y-bounds
-fsz = [6, 3]       # figure size
-res = 100           # grid resolution
+xb = [1., 4.]       # grid x-bounds
+yb = [1., 2.]       # grid y-bounds
+fsz = [12, 4]       # figure size
+res = 200           # grid resolution
 fps = 100           # frames per second
 
 # read configuration

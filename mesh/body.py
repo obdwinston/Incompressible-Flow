@@ -6,13 +6,13 @@ import matplotlib.pyplot as plt
 M = .00             # maximum camber [% chord]
 P = .00             # maximum camber position [% chord]
 t = .12             # thickness [% chord]
-a = m.radians(10.)   # angle of attack [deg]
+a = m.radians(5.)   # angle of attack [deg]
 ha = 15.            # half-angle (only for diamond airfoil)
 n = 200             # number of panels
 
 def airfoil(M, P, t, n):
-    # x = (1 - np.cos(np.linspace(0, m.pi, int(n/2))))/2  # cosine spacing
-    x = np.linspace(0, 1, n//2) # linear spacing
+    x = (1 - np.cos(np.linspace(0, m.pi, int(n/2))))/2  # cosine spacing
+    # x = np.linspace(0, 1, n//2) # linear spacing
     y = np.zeros(n//2)
     for i in range(len(x)):
         if x[i] < P:
@@ -60,5 +60,8 @@ def custom():
     plt.axis('equal')
     plt.show()
 
-# airfoil(M, P, t, n)
-diamond(ha, n)
+if not os.path.exists('mesh/body.txt'):
+    # airfoil(M, P, t, n)
+    diamond(ha, n)
+else:
+    custom()

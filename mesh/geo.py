@@ -4,7 +4,15 @@ L = 10.         # domain length
 H = 3.          # domain height
 xle = 1.5       # leading edge x-coordinate
 yle = 1.5       # leading edge y-coordinate
-esf = .1        # mesh size factor
+
+esf = .5        # mesh size factor
+sft = 1.        # size field thickness
+vin = .05       # size field internal element size
+vout = .2       # size field external element size
+xmin = 1.       # size field minimum x-coordinate
+xmax = 10.      # size field maximum x-coordinate
+ymin = 1.       # size field minimum y-coordinate
+ymax = 2.       # size field maximum y-coordinate
 
 XY = np.loadtxt('mesh/body.txt')
 X, Y = XY[:, 0] + xle, XY[:, 1] + yle
@@ -47,3 +55,12 @@ geo.write('Physical Curve("WALL", %d) = {1, 3, ' % (len(X) + 7) + body + '};\n')
 
 geo.write('\n// size field\n\n')
 geo.write('Mesh.MeshSizeFactor = %.10f;\n' % esf)
+geo.write('Field[1] = Box;\n')
+geo.write('Field[1].Thickness = %.10f;\n' % sft)
+geo.write('Field[1].VIn = %.10f;\n' % vin)
+geo.write('Field[1].VOut = %.10f;\n' % vout)
+geo.write('Field[1].XMin = %.10f;\n' % xmin)
+geo.write('Field[1].XMax = %.10f;\n' % xmax)
+geo.write('Field[1].YMin = %.10f;\n' % ymin)
+geo.write('Field[1].YMax = %.10f;\n' % ymax)
+geo.write('Background Field = 1;\n')
