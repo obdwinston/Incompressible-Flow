@@ -34,7 +34,7 @@ grid_values = griddata((x[indices], y[indices]), values, (grid_x, grid_y), metho
 
 fig, ax = plt.subplots(figsize=fsz)
 ax.set_aspect('equal')
-ax.set_title('Speed [m/s]', fontweight='bold')
+ax.set_title('Speed', fontweight='bold')
 contour = ax.contourf(grid_x, grid_y, grid_values, levels=res, cmap='jet')
 cbar = plt.colorbar(contour, ax=ax)
 ax.fill(nxy[:, 0], nxy[:, 1])
@@ -46,7 +46,7 @@ def update(frame):
     
     ax.cla()
     ax.set_aspect('equal')
-    ax.set_title('Speed [m/s]', fontweight='bold')
+    ax.set_title('Speed', fontweight='bold')
     contour = ax.contourf(grid_x, grid_y, grid_values, levels=res, cmap='jet')
     cbar.update_normal(contour)
     cbar.update_ticks()
