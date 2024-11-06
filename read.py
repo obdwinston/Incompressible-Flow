@@ -5,7 +5,7 @@ from scipy.interpolate import griddata
 
 xb = [1., 4.]       # grid x-bounds
 yb = [1., 2.]       # grid y-bounds
-fsz = [12, 4]       # figure size
+fsz = [9, 3]       # figure size
 res = 400           # grid resolution
 fps = 100           # frames per second
 
@@ -38,6 +38,7 @@ ax.set_title('Speed', fontweight='bold')
 contour = ax.contourf(grid_x, grid_y, grid_values, levels=res, cmap='jet')
 cbar = plt.colorbar(contour, ax=ax)
 ax.fill(nxy[:, 0], nxy[:, 1])
+plt.tight_layout()
 
 def update(frame):
     data = np.loadtxt(f'data/Wc_{frame:010d}.txt')
@@ -48,8 +49,6 @@ def update(frame):
     ax.set_aspect('equal')
     ax.set_title('Speed', fontweight='bold')
     contour = ax.contourf(grid_x, grid_y, grid_values, levels=res, cmap='jet')
-    cbar.update_normal(contour)
-    cbar.update_ticks()
     ax.fill(nxy[:, 0], nxy[:, 1])
 
     return contour

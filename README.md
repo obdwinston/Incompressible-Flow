@@ -48,6 +48,12 @@ For Windows users, you need to modify `run.sh` accordingly before executing the 
 
 ## Solver Verification
 
+### Circular Cylinder
+
+| Re  | Diameter |  Speed  |      Viscosity       |
+| :-: | :------: | :-----: | :------------------: |
+| 100 |  0.2 m   | 5.0 m/s | 0.01 m<sup>2</sup>/s |
+
 https://github.com/user-attachments/assets/0e658782-5c90-4e13-b003-67133d9d79ec
 
 ## Solver Theory
