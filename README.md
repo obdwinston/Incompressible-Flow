@@ -48,7 +48,7 @@ For Windows users, you need to modify `run.sh` accordingly before executing the 
 
 ## Solver Verification
 
-https://github.com/user-attachments/assets/a05195a0-c8fa-4a11-b4ce-0961b1f41902
+https://github.com/user-attachments/assets/0e658782-5c90-4e13-b003-67133d9d79ec
 
 ## Solver Theory
 
