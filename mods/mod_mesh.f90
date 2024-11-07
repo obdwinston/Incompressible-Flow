@@ -459,7 +459,7 @@ contains
             mx = msh % nodes(res) % coordinates(1)
             my = msh % nodes(res) % coordinates(2)
             dx = abs(mx - (nx + 1.5))
-            dy = abs(my - (ny + 1.5))
+            dy = abs(my - (ny + 2.5))
             if (dx <= 1e-5 .and. dy <= 1e-5) return
         end do
     end function get_node

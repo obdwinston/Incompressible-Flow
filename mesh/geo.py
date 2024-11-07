@@ -1,18 +1,18 @@
 import numpy as np
 
-L = 10.         # domain length
-H = 3.          # domain height
+L = 25.         # domain length
+H = 5.          # domain height
 xle = 1.5       # leading edge x-coordinate
-yle = 1.5       # leading edge y-coordinate
+yle = 2.5       # leading edge y-coordinate
 
 esf = .5        # mesh size factor
-sft = 1.        # size field thickness
-vin = .05       # size field internal element size
+sft = 2.        # size field thickness
+vin = .04       # size field internal element size
 vout = .2       # size field external element size
 xmin = 1.       # size field minimum x-coordinate
-xmax = 10.      # size field maximum x-coordinate
-ymin = 1.       # size field minimum y-coordinate
-ymax = 2.       # size field maximum y-coordinate
+xmax = 4.       # size field maximum x-coordinate
+ymin = 1.5      # size field minimum y-coordinate
+ymax = 3.5      # size field maximum y-coordinate
 
 XY = np.loadtxt('mesh/body.txt')
 X, Y = XY[:, 0] + xle, XY[:, 1] + yle

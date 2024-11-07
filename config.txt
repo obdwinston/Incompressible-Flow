@@ -1,6 +1,6 @@
-Re=     10000.      ! freestream Reynolds number
-Pe=     2.          ! local Peclet number threshold
-nk=     5           ! Gauss-Seidel iterations
+Re=     100000.     ! freestream Reynolds number
+Pe=     -1.         ! local Peclet number threshold (set -1. to disable centred differencing for convection flux)
+nk=     10          ! Gauss-Seidel iterations
 dt=     .0001       ! time step
 nt=     250000      ! time iterations
 nw=     100         ! write interval
