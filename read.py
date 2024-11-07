@@ -5,17 +5,18 @@ from scipy.interpolate import griddata
 
 xb = [1., 4.]       # grid x-bounds
 yb = [1.5, 3.5]     # grid y-bounds
+vb = [0., 3.5]      # value bounds
 fs = [9, 5]         # figure size
-res = 100           # grid resolution
-fps = 100            # frames per second
+res = 200           # grid resolution
+fps = 100           # frames per second
 
 # read configuration
 
-with open("config.txt", "r") as file:
+with open('config.txt', 'r') as file:
     for line in file:
-        if line.startswith("nt="):
+        if line.startswith('nt='):
             nt = int(line.split()[1])
-        elif line.startswith("nw="):
+        elif line.startswith('nw='):
             nw = int(line.split()[1])
 
 # field animation
@@ -35,12 +36,13 @@ for i in range(nw, nt + nw, nw):
     values = np.sqrt(data[indices, 0]**2 + data[indices, 1]**2)
     grid_values = griddata((x[indices], y[indices]), values, (grid_x, grid_y), method='linear')
 
-    vmin, vmax = np.min(values), np.max(values)
-    levels = np.linspace(vmin, vmax, res)
+    # vmin, vmax = np.min(values), np.max(values)
+    levels = np.linspace(vb[0], vb[1], res)
 
     fig, ax = plt.subplots(figsize=fs)
-    cf = ax.contourf(grid_x, grid_y, grid_values, levels=levels, cmap='jet')
+    cf = ax.contourf(grid_x, grid_y, grid_values, levels=levels, cmap='jet', extend='both')
     cb = fig.colorbar(cf, ax=ax)
+    cb.set_ticks(np.linspace(vb[0], vb[1], 11))
     ax.fill(nxy[:, 0], nxy[:, 1])
     ax.set_title('Speed', fontweight='bold')
     ax.set_xlim(xb), ax.set_ylim(yb)
