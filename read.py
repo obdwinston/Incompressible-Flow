@@ -54,5 +54,6 @@ for i in range(nw, nt + nw, nw):
     frames.append(f'data/speed_{i:010d}.png')
     print('Saving frame %d of %d (%.3f%%) ... Done!' % (i, nt, i/nt*100.))
 
-clip = mpy.ImageSequenceClip(frames, fps=fps)
-clip.write_videofile('data/speed.mp4')
+animation = mpy.ImageSequenceClip(frames, fps=fps)
+animation.write_videofile('data/speed.mp4')
+print('Done!')
