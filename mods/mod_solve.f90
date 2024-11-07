@@ -245,8 +245,8 @@ contains
                     af(i, j) = 0.
                     ac(i) = ac(i) + 0.
                 else if (trim(msh % faces(fj) % face_type) == 'OUTLET') then
-                    af(i, j) = 0. ! zero pressure outlet
-                    ac(i) = ac(i) - Sf/df
+                    af(i, j) = 0.
+                    ac(i) = ac(i) - 2.*Sf/df ! zero pressure outlet (pcf = -pc)
                 else
                     error stop 'Error: invalid face type'
                 end if
@@ -302,7 +302,7 @@ contains
         real(real64) :: wf
         do concurrent(i = 1:msh % n_faces)
             if (trim(msh % faces(i) % face_type) == 'OUTLET') then
-                pf(i) = 0. ! zero pressure outlet
+                pf(i) = 0. ! zero pressure outlet (pf = 0)
             else
                 c1 = msh % faces(i) % face_cells(1)
                 c2 = msh % faces(i) % face_cells(2)

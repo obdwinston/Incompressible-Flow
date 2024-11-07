@@ -1,5 +1,5 @@
 Re=     10000.      ! freestream Reynolds number
-Pe=     5.          ! local Peclet number threshold
+Pe=     2.          ! local Peclet number threshold
 nk=     5           ! Gauss-Seidel iterations
 dt=     .0001       ! time step
 nt=     250000      ! time iterations
