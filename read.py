@@ -57,11 +57,13 @@ for i in range(nw, nt + nw, nw):
     cf1 = ax1.contourf(xx, yy, v, \
     levels=np.linspace(vb[0], vb[1], res), cmap='jet', extend='both')
     ax1.fill(nxy[:, 0], nxy[:, 1])
+    ax1.set_xlim(xb), ax1.set_ylim(yb)
     ax1.set_aspect('equal')
     # plot vorticity
     cf2 = ax2.contourf(xx, yy, w, \
     levels=np.linspace(wb[0], wb[1], res), cmap='jet', extend='both')
     ax2.fill(nxy[:, 0], nxy[:, 1])
+    ax2.set_xlim(xb), ax2.set_ylim(yb)
     ax2.set_aspect('equal')
 
     if full:
