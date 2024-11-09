@@ -54,7 +54,6 @@ program main
     allocate(af(msh % n_cells, 3))
     allocate(bc(msh % n_cells))
 
-    call set_poisson_coefficients(ac, af, msh)
     call set_initial_conditions(U0, Uc, msh, config)
 
     write(stdout, *) 'Running simulation...'
@@ -65,18 +64,19 @@ program main
         call set_timestep(config, Uc, msh)
 
         call set_node_velocities(Un, Uc, U0, msh)
-        call set_face_velocities(Uf, Uc, U0, msh)
+        call set_face_velocities(Uf, Un, Uc, U0, msh)
         call set_velocity_gradients(Du, Dv, Uf, msh)
 
         call set_diffusion_fluxes(Fd, Un, Uf, Uc, msh, config)
         call set_convection_fluxes(Fc, Un, Uf, Uc, Du, Dv, msh, config)
         call set_intermediate_velocities(Ut, Uc, Fd, Fc, msh, config)
 
-        call set_face_velocities(Utf, Ut, U0, msh)
+        call set_face_velocities(Utf, Un, Ut, U0, msh)
+        call set_poisson_coefficients(ac, af, Utf, msh)
         call set_poisson_constants(bc, Utf, msh, config)
 
         call set_cell_pressures(pc, ac, af, bc, msh, config)
-        call set_face_pressures(pf, pc, msh)
+        call set_face_pressures(pf, pc, Utf, msh)
         
         call set_corrected_velocities(Uc, Ut, pf, msh, config)
         

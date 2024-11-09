@@ -77,20 +77,34 @@ contains
         end do
     end subroutine set_node_velocities
 
-    subroutine set_face_velocities(Uf, Uc, U0, msh)
-        real(real64), dimension(:, :), intent(in out) :: Uf
+    subroutine set_face_velocities(Uf, Un, Uc, U0, msh)
+        real(real64), dimension(:, :), intent(in out) :: Uf, Un
         real(real64), dimension(:, :), intent(in) :: Uc
         real(real64), dimension(2), intent(in) :: U0
         type(Mesh), intent(in) :: msh
-        integer(int32) :: i, c1, c2
-        real(real64) :: wf
+        integer(int32) :: i, c1, c2, n1, n2
+        real(real64) :: wf, mf
+        real(real64), dimension(2) :: nf
         do concurrent(i = 1:msh % n_faces)
-            if (trim(msh % faces(i) % face_type) == 'INTERIOR' .or. &
-            trim(msh % faces(i) % face_type) == 'OUTLET') then
+            if (trim(msh % faces(i) % face_type) == 'INTERIOR') then
                 c1 = msh % faces(i) % face_cells(1)
                 c2 = msh % faces(i) % face_cells(2)
                 wf = msh % faces(i) % face_cell_weight
                 Uf(i, :) = wf*Uc(c1, :) + (1 - wf)*Uc(c2, :)
+            else if (trim(msh % faces(i) % face_type) == 'OUTLET') then
+                c1 = msh % faces(i) % face_cells(1)
+                c2 = msh % faces(i) % face_cells(2)
+                wf = msh % faces(i) % face_cell_weight
+                Uf(i, :) = wf*Uc(c1, :) + (1 - wf)*Uc(c2, :)
+                nf = msh % faces(i) % face_normal
+                mf = dot_product(Uf(i, :), nf) ! sign always 1. for boundary
+                if (mf < 0.) then ! outlet inflow
+                    n1 = msh % faces(i) % face_nodes(1)
+                    n2 = msh % faces(i) % face_nodes(2)
+                    Uf(i, :) = 0. ! set to dirichlet velocity 0. for stability
+                    Un(n1, :) = 0.
+                    Un(n2, :) = 0.
+                end if
             else if (trim(msh % faces(i) % face_type) == 'INLET') then
                 Uf(i, :) = U0
             else if (trim(msh % faces(i) % face_type) == 'WALL') then
@@ -223,12 +237,14 @@ contains
         end do
     end subroutine set_intermediate_velocities
 
-    subroutine set_poisson_coefficients(ac, af, msh)
+    subroutine set_poisson_coefficients(ac, af, Utf, msh)
         real(real64), dimension(:), intent(in out) :: ac
         real(real64), dimension(:, :), intent(in out) :: af
+        real(real64), dimension(:, :), intent(in) :: Utf
         type(Mesh), intent(in) :: msh
         integer(int32) :: i, j, fj
-        real(real64) :: Sf, df
+        real(real64) :: Sf, df, mf
+        real(real64), dimension(2) :: nf
         do concurrent(i = 1:msh % n_cells)
             ac(i) = 0.
             do concurrent(j = 1:3)
@@ -245,8 +261,15 @@ contains
                     af(i, j) = 0.
                     ac(i) = ac(i) + 0.
                 else if (trim(msh % faces(fj) % face_type) == 'OUTLET') then
-                    af(i, j) = 0.
-                    ac(i) = ac(i) - 2.*Sf/df ! zero pressure outlet (pcf = -pc)
+                    nf = msh % faces(i) % face_normal
+                    mf = dot_product(Utf(fj, :), nf) ! sign always 1. for boundary
+                    if (mf < 0.) then ! outlet inflow
+                        af(i, j) = 0.
+                        ac(i) = ac(i) + 0. ! set to neumann pressure 0. for stability
+                    else
+                        af(i, j) = 0.
+                        ac(i) = ac(i) - 2.*Sf/df ! zero pressure outlet (pcf = -pc)
+                    end if
                 else
                     error stop 'Error: invalid face type'
                 end if
@@ -294,15 +317,26 @@ contains
         end do
     end subroutine set_cell_pressures
 
-    subroutine set_face_pressures(pf, pc, msh)
+    subroutine set_face_pressures(pf, pc, Utf, msh)
         real(real64), dimension(:), intent(in out) :: pf
         real(real64), dimension(:), intent(in) :: pc
+        real(real64), dimension(:, :), intent(in) :: Utf
         type(Mesh), intent(in) :: msh
         integer(int32) :: i, c1, c2
-        real(real64) :: wf
+        real(real64) :: wf, mf
+        real(real64), dimension(2) :: nf
         do concurrent(i = 1:msh % n_faces)
             if (trim(msh % faces(i) % face_type) == 'OUTLET') then
-                pf(i) = 0. ! zero pressure outlet (pf = 0)
+                nf = msh % faces(i) % face_normal
+                mf = dot_product(Utf(i, :), nf) ! sign always 1. for boundary
+                if (mf < 0.) then ! outlet inflow
+                    c1 = msh % faces(i) % face_cells(1)
+                    c2 = msh % faces(i) % face_cells(2)
+                    wf = msh % faces(i) % face_cell_weight
+                    pf(i) = wf*pc(c1) + (1 - wf)*pc(c2) ! set to neumann pressure 0. for stability
+                else
+                    pf(i) = 0. ! zero pressure outlet (pf = 0)
+                end if
             else
                 c1 = msh % faces(i) % face_cells(1)
                 c2 = msh % faces(i) % face_cells(2)
