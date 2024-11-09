@@ -57,7 +57,7 @@ _For Windows users, you need to modify `run.sh` accordingly before executing the
 
 ### Inlet-Outlet Boundary
 
-![](https://github.com/user-attachments/assets/b8dba586-7f51-48d1-8b29-80b71b80269b)
+![](https://github.com/user-attachments/assets/26277156-2f95-463f-8907-89d7481cf33a)
 
 https://github.com/user-attachments/assets/929b6f2c-afb3-4849-af28-4ca8f3fb779d
 
