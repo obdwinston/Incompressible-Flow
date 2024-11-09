@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 import moviepy.editor as mpy
 from scipy.interpolate import griddata
 
-xb = [12., 15.]         # grid x-bounds
-yb = [0., 5.]           # grid y-bounds
-vb = [0., 3.5]          # velocity bounds
-wb = [-150., 150.]      # vorticity bounds
+xb = [1., 4.]           # grid x-bounds
+yb = [1.5, 3.5]         # grid y-bounds
+# vb = [0., 3.5]          # velocity bounds
+# wb = [-150., 150.]      # vorticity bounds
 fs = [8, 8]             # figure size
 res = 200               # grid resolution
 fps = 100               # frames per second
@@ -54,14 +54,18 @@ for i in range(nw, nt + nw, nw):
 
     fig, (ax1, ax2) = plt.subplots(nrows=2, figsize=fs)
     # plot velocity
+    vmin, vmax = np.nanmin(v), np.nanmax(v)
     cf1 = ax1.contourf(xx, yy, v, \
-    levels=np.linspace(vb[0], vb[1], res), cmap='jet', extend='both')
+    # levels=np.linspace(vb[0], vb[1], res), cmap='jet', extend='both')
+    levels=np.linspace(vmin, vmax, res), cmap='jet', extend='both')
     ax1.fill(nxy[:, 0], nxy[:, 1])
     ax1.set_xlim(xb), ax1.set_ylim(yb)
     ax1.set_aspect('equal')
     # plot vorticity
+    wmin, wmax = np.nanmin(w), np.nanmax(w)
     cf2 = ax2.contourf(xx, yy, w, \
-    levels=np.linspace(wb[0], wb[1], res), cmap='jet', extend='both')
+    # levels=np.linspace(wb[0], wb[1], res), cmap='jet', extend='both')
+    levels=np.linspace(wmin, wmax, res), cmap='jet', extend='both')
     ax2.fill(nxy[:, 0], nxy[:, 1])
     ax2.set_xlim(xb), ax2.set_ylim(yb)
     ax2.set_aspect('equal')
@@ -71,13 +75,15 @@ for i in range(nw, nt + nw, nw):
         ax1.text(.025, .025, text1, fontweight='bold', \
         transform=ax1.transAxes, va='bottom', ha='left')
         cb1 = fig.colorbar(cf1, ax=ax1)
-        cb1.set_ticks(np.linspace(vb[0], vb[1], 11))
+        # cb1.set_ticks(np.linspace(vb[0], vb[1], 11))
+        cb1.set_ticks(np.linspace(vmin, vmax, 11))
 
         text2 = 'Vorticity (Re = {:.0f})'.format(Re)
         ax2.text(0.025, .025, text2, fontweight='bold', \
         transform=ax2.transAxes, va='bottom', ha='left')
         cb2 = fig.colorbar(cf2, ax=ax2)
-        cb2.set_ticks(np.linspace(wb[0], wb[1], 11))
+        # cb2.set_ticks(np.linspace(wb[0], wb[1], 11))
+        cb2.set_ticks(np.linspace(wmin, wmax, 11))
 
         fig.tight_layout()
         fig.savefig(f'data/frame_{i:010d}.png')
