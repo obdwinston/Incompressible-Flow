@@ -1,6 +1,6 @@
 import numpy as np
 
-L = 25.         # domain length
+L = 15.         # domain length
 H = 5.          # domain height
 xle = 1.5       # leading edge x-coordinate
 yle = 2.5       # leading edge y-coordinate
