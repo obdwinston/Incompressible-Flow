@@ -5,7 +5,7 @@ from scipy.interpolate import griddata
 
 xb = [1., 4.]           # grid x-bounds
 yb = [1.5, 3.5]         # grid y-bounds
-vb = [0., 3.5]           # velocity bounds
+vb = [0., 3.5]          # velocity bounds
 wb = [-150., 150.]      # vorticity bounds
 fs = [8, 8]             # figure size
 res = 200               # grid resolution
