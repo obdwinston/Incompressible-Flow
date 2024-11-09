@@ -1,10 +1,10 @@
 ## Program Overview
 
-This program implements Chorin's projection method to solve the incompressible Navier-Stokes equations on an unstructured triangular mesh using the finite volume method. The convection fluxes use hybrid differencing to switch between centred and upwind, depending on the local Peclet number. The high-order upwind differencing employs a TVD scheme with the Superbee limiter.
+This program implements Chorin's projection method to solve the incompressible Navier-Stokes equations on an unstructured triangular mesh using the finite volume method. The convection flux uses hybrid differencing to switch between centred and upwind, depending on the local Peclet number. The high-order upwind differencing employs a TVD scheme with the Superbee limiter. An inlet-outlet boundary condition is applied at the outlet to reduce numerical instabilities due to backflow, particularly in high Re flows where vortices are convected downstream with minimal dissipation.
 
 ![](https://github.com/user-attachments/assets/51e4886b-5f69-4d03-96c3-250836c17a89)
 
-https://github.com/user-attachments/assets/5029c2d0-7dc4-4ba1-89ac-ee6198a1a28b
+https://github.com/user-attachments/assets/317a71d2-b156-420c-976e-25506dd24a00
 
 ## Program Files
 
@@ -55,6 +55,10 @@ _For Windows users, you need to modify `run.sh` accordingly before executing the
 
 ## Solver Verification
 
+### Inlet-Outlet Boundary
+
+https://github.com/user-attachments/assets/929b6f2c-afb3-4849-af28-4ca8f3fb779d
+
 ### Circular Cylinder
 
 | Re  | Diameter |  Speed  |      Viscosity       |
@@ -65,11 +69,12 @@ https://github.com/user-attachments/assets/0e658782-5c90-4e13-b003-67133d9d79ec
 
 ## Solver Theory
 
-![](https://github.com/user-attachments/assets/81850a3a-e507-4f98-a0ad-5007fa0ab79c)
+![](https://github.com/user-attachments/assets/df9b6e9f-9c11-4c5d-8f5f-1c46cb7df4db)
 
 ## References
 
 [1] Moukalled et al. (2016). _The Finite Volume Method in Computational Fluid Dynamics._  
 [2] Mazumder (2016). _Numerical Methods for Partial Differential Equations._  
 [3] Versteeg et al. (2015). _An Introduction to Computational Fluid Dynamics._  
-[4] Saad (2020). _Computational Fluid Dynamics [Lecture Series](https://www.youtube.com/watch?v=sSqtgi0zqT8&list=PLEaLl6Sf-KIC7oet7zvNfW03aocrIq-s4) (Spring 2019)._
+[4] _[Prof. Saad's Computational Fluid Dynamics Lecture Series](https://www.youtube.com/watch?v=sSqtgi0zqT8&list=PLEaLl6Sf-KIC7oet7zvNfW03aocrIq-s4)._  
+[5] _[SimFlow's Documentation on Inlet-Outlet Boundary Condition](https://help.sim-flow.com/boundary-conditions/inlet-outlet)._
