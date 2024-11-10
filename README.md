@@ -57,7 +57,7 @@ _For Windows users, you need to modify `run.sh` accordingly before executing the
 
 ### Inlet-Outlet Boundary Condition
 
-The inlet-outlet B.C. at the outlet applies a Neumann velocity B.C. (∇φ = 0) for outflow, and a Dirichlet velocity B.C. (φ = 0) for inflow. The inflow value is set to zero to reduce numerical instabilities caused by backflow. These instabilities are exacerbated in high Re flows where vortices are convected downstream with minimal dissipation.
+The inlet-outlet B.C. at the outlet applies a Neumann velocity B.C. (∇φ = 0) for outflow, and a Dirichlet velocity B.C. (φ = 0) for inflow. The inflow value is set to zero to reduce numerical instabilities caused by reverse flow at the outlet. These instabilities are exacerbated in high Re flows where vortices are convected downstream with minimal dissipation.
 
 ![](https://github.com/user-attachments/assets/26277156-2f95-463f-8907-89d7481cf33a)
 
