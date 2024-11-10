@@ -1,6 +1,6 @@
 ## Program Overview
 
-This program implements Chorin's projection method to solve the incompressible Navier-Stokes equations on an unstructured triangular mesh using the finite volume method. The convection flux uses hybrid differencing to switch between centred and upwind, depending on the local Peclet number. The high-order upwind differencing employs a TVD scheme with the Superbee limiter. An inlet-outlet boundary condition is applied at the outlet to reduce numerical instabilities due to backflow.
+This program implements Chorin's projection method to solve the incompressible Navier-Stokes equations on an unstructured triangular mesh using the finite volume method. The convection flux uses hybrid differencing to switch between centred and upwind, depending on the local Peclet number. The high-order upwind differencing employs a TVD scheme with the Superbee limiter. An inlet-outlet boundary condition is applied at the outlet to reduce numerical instabilities caused by backflow.
 
 ![](https://github.com/user-attachments/assets/51e4886b-5f69-4d03-96c3-250836c17a89)
 
@@ -57,7 +57,7 @@ _For Windows users, you need to modify `run.sh` accordingly before executing the
 
 ### Inlet-Outlet Boundary Condition
 
-The inlet-outlet B.C. at the outlet applies a Neumann velocity B.C. (∇φ = 0) for positive face velocities (outflow), and a Dirichlet velocity B.C. (φ = 0) for negative face velocities (inflow). The inflow value is set to zero to eliminate any backflow and reduce numerical instabilities, which are exacerbated by high Re flows where vortices are convected downstream with minimal dissipation.
+The inlet-outlet B.C. at the outlet applies a Neumann velocity B.C. (∇φ = 0) for outflow, and a Dirichlet velocity B.C. (φ = 0) for inflow. The inflow value is set to zero to reduce numerical instabilities caused by backflow. These instabilities are exacerbated in high Re flows where vortices are convected downstream with minimal dissipation.
 
 ![](https://github.com/user-attachments/assets/26277156-2f95-463f-8907-89d7481cf33a)
 
