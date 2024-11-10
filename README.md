@@ -1,6 +1,6 @@
 ## Program Overview
 
-This program implements Chorin's projection method to solve the incompressible Navier-Stokes equations on an unstructured triangular mesh using the finite volume method. The convection flux uses hybrid differencing to switch between centred and upwind, depending on the local Peclet number. The high-order upwind differencing employs a TVD scheme with the Superbee limiter. An inlet-outlet boundary condition is applied at the outlet to reduce numerical instabilities caused by backflow.
+This program implements Chorin's projection method to solve the incompressible Navier-Stokes equations on an unstructured triangular mesh using the finite volume method. The convection flux uses hybrid differencing to switch between centred and upwind, depending on the local Peclet number. The high-order upwind differencing employs a TVD scheme with the Superbee limiter. An inlet-outlet boundary condition is applied at the outlet to reduce numerical instabilities caused by reverse flow.
 
 ![](https://github.com/user-attachments/assets/51e4886b-5f69-4d03-96c3-250836c17a89)
 
