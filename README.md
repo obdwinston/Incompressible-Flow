@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/0e658782-5c90-4e13-b003-67133d9d79ec
 
 ## Solver Theory
 
-![](https://github.com/user-attachments/assets/df9b6e9f-9c11-4c5d-8f5f-1c46cb7df4db)
+![](https://github.com/user-attachments/assets/27c2dc26-4a83-45f4-9f9c-e499d5c7a241)
 
 ## References
 
