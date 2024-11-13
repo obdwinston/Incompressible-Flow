@@ -55,14 +55,6 @@ _For Windows users, you need to modify `run.sh` accordingly before executing the
 
 ## Solver Verification
 
-### Inlet-Outlet Boundary Condition
-
-The inlet-outlet B.C. at the outlet applies a Neumann velocity B.C. (∇φ = 0) for outflow, and a Dirichlet velocity B.C. (φ = 0) for inflow. The inflow value is set to zero to reduce numerical instabilities caused by reverse flow at the outlet. These instabilities are exacerbated in high Re flows where vortices are convected downstream with minimal dissipation.
-
-![](https://github.com/user-attachments/assets/26277156-2f95-463f-8907-89d7481cf33a)
-
-https://github.com/user-attachments/assets/929b6f2c-afb3-4849-af28-4ca8f3fb779d
-
 ### Circular Cylinder
 
 | Re  | Diameter |  Speed  |      Viscosity       |
