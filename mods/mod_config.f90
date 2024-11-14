@@ -10,6 +10,8 @@ module mod_config
         real(real64) :: Re
         real(real64) :: Pe
         integer(int32) :: nk
+        real(real64) :: tol
+        real(real64) :: urf
         real(real64) :: dt
         integer(int32) :: nt
         integer(int32) :: nw
@@ -30,6 +32,8 @@ contains
         read(10, *) line, res % Re
         read(10, *) line, res % Pe
         read(10, *) line, res % nk
+        read(10, *) line, res % tol
+        read(10, *) line, res % urf
         read(10, *) line, res % dt
         read(10, *) line, res % nt
         read(10, *) line, res % nw

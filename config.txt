@@ -1,6 +1,8 @@
-Re=     1000000.    ! freestream Reynolds number
+Re=     100000.     ! freestream Reynolds number
 Pe=     2.          ! local Peclet number threshold (set -1. for upwind only)
-nk=     10          ! Gauss-Seidel iterations
+nk=     200         ! Gauss-Seidel maximum iterations
+tol=    .001        ! Gauss-Seidel residual tolerance
+urf=    .7          ! Gauss-Seidel under-relaxation factor
 dt=     .0001       ! time step
 nt=     250000      ! time iterations
 nw=     100         ! write interval

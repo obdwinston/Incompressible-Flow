@@ -1,5 +1,5 @@
 module mod_solve
-    use iso_fortran_env, only: int32, real64
+    use iso_fortran_env, only: int32, real64, stdout => output_unit
     use mod_mesh, only: Mesh
     use mod_config, only: Configuration
     implicit none
@@ -97,11 +97,11 @@ contains
                 wf = msh % faces(i) % face_cell_weight
                 Uf(i, :) = wf*Uc(c1, :) + (1 - wf)*Uc(c2, :)
                 nf = msh % faces(i) % face_normal
-                mf = dot_product(Uf(i, :), nf) ! sign always 1. for boundary
+                mf = dot_product(Uf(i, :), nf) ! sign = 1. for boundary
                 if (mf < 0.) then ! outlet inflow
                     n1 = msh % faces(i) % face_nodes(1)
                     n2 = msh % faces(i) % face_nodes(2)
-                    Uf(i, :) = 0. ! set to dirichlet velocity 0. for stability
+                    Uf(i, :) = 0. ! set Uf = 0. for stability
                     Un(n1, :) = 0.
                     Un(n2, :) = 0.
                 end if
@@ -201,11 +201,11 @@ contains
         real(real64), intent(in) :: phi_u, phi_d, phi_uu
         real(real64) :: res
         real(real64) :: rf
-        if (abs(phi_u - phi_d) > 1e-15) then ! phi_u /= phi_d
+        if (abs(phi_u - phi_d) < 1e-15) then
+            res = phi_u
+        else
             rf = (phi_u - phi_uu)/(phi_d - phi_u)
             res = phi_u + .5*(phi_d - phi_u)*get_limiter(rf)
-        else ! phi_u == phi_d
-            res = phi_u
         end if
     end function get_convected_quantity
 
@@ -262,13 +262,13 @@ contains
                     ac(i) = ac(i) + 0.
                 else if (trim(msh % faces(fj) % face_type) == 'OUTLET') then
                     nf = msh % faces(i) % face_normal
-                    mf = dot_product(Utf(fj, :), nf) ! sign always 1. for boundary
+                    mf = dot_product(Utf(fj, :), nf) ! sign = 1. for boundary
                     if (mf < 0.) then ! outlet inflow
                         af(i, j) = 0.
-                        ac(i) = ac(i) + 0. ! set to neumann pressure 0. for stability
+                        ac(i) = ac(i) + 0. ! set ∇pf = 0. for stability
                     else
                         af(i, j) = 0.
-                        ac(i) = ac(i) - 2.*Sf/df ! zero pressure outlet (pcf = -pc)
+                        ac(i) = ac(i) - Sf/df ! zero pressure outlet (pf = 0.)
                     end if
                 else
                     error stop 'Error: invalid face type'
@@ -304,17 +304,23 @@ contains
         type(Mesh), intent(in) :: msh
         type(Configuration), intent(in) :: config
         integer(int32) :: i, j, k, cj
-        real(real64) :: acf
-        do concurrent(k = 1:config % nk) ! gauss-seidel
+        real(real64) :: acf, res, new
+        do k = 1, config % nk ! gauss-seidel
+            res = 0.
             do concurrent(i = 1:msh % n_cells)
                 acf = 0.
                 do concurrent(j = 1:3)
                     cj = msh % cells(i) % cell_cells(j)
                     acf = acf + af(i, j)*pc(cj)
                 end do
-                pc(i) = (bc(i) - acf)/ac(i)
+                new = (bc(i) - acf)/ac(i)
+                pc(i) = (1. - config % urf)*pc(i) + config % urf*new
+                res = res + (bc(i) - acf - ac(i)*pc(i))**2
             end do
+            res = sqrt(res / msh % n_cells)
+            if (res < config % tol) exit
         end do
+        write(stdout, *) 'k=', k, 'res=', res
     end subroutine set_cell_pressures
 
     subroutine set_face_pressures(pf, pc, Utf, msh)
@@ -328,14 +334,14 @@ contains
         do concurrent(i = 1:msh % n_faces)
             if (trim(msh % faces(i) % face_type) == 'OUTLET') then
                 nf = msh % faces(i) % face_normal
-                mf = dot_product(Utf(i, :), nf) ! sign always 1. for boundary
+                mf = dot_product(Utf(i, :), nf) ! sign = 1. for boundary
                 if (mf < 0.) then ! outlet inflow
                     c1 = msh % faces(i) % face_cells(1)
                     c2 = msh % faces(i) % face_cells(2)
                     wf = msh % faces(i) % face_cell_weight
-                    pf(i) = wf*pc(c1) + (1 - wf)*pc(c2) ! set to neumann pressure 0. for stability
+                    pf(i) = wf*pc(c1) + (1 - wf)*pc(c2) ! set ∇pf = 0. for stability
                 else
-                    pf(i) = 0. ! zero pressure outlet (pf = 0)
+                    pf(i) = 0. ! zero pressure outlet (pf = 0.)
                 end if
             else
                 c1 = msh % faces(i) % face_cells(1)
