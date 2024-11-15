@@ -4,6 +4,8 @@ This program implements Chorin's projection method to solve the incompressible N
 
 ![](https://github.com/user-attachments/assets/51e4886b-5f69-4d03-96c3-250836c17a89)
 
+https://github.com/user-attachments/assets/6720c6d9-8554-475e-b3e1-23e819647c95
+
 ## Program Files
 
 ```
