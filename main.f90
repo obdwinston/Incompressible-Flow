@@ -64,14 +64,14 @@ program main
         call set_timestep(config, Uc, msh)
 
         call set_node_velocities(Un, Uc, U0, msh)
-        call set_face_velocities(Uf, Un, Uc, U0, msh)
+        call set_face_velocities(Uf, Uc, U0, msh)
         call set_velocity_gradients(Du, Dv, Uf, msh)
 
         call set_diffusion_fluxes(Fd, Un, Uf, Uc, msh, config)
         call set_convection_fluxes(Fc, Un, Uf, Uc, Du, Dv, msh, config)
         call set_intermediate_velocities(Ut, Uc, Fd, Fc, msh, config)
 
-        call set_face_velocities(Utf, Un, Ut, U0, msh)
+        call set_face_velocities(Utf, Ut, U0, msh)
         call set_poisson_coefficients(ac, af, Utf, msh)
         call set_poisson_constants(bc, Utf, msh, config)
 

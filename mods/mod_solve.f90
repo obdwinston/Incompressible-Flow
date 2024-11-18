@@ -77,8 +77,8 @@ contains
         end do
     end subroutine set_node_velocities
 
-    subroutine set_face_velocities(Uf, Un, Uc, U0, msh)
-        real(real64), dimension(:, :), intent(in out) :: Uf, Un
+    subroutine set_face_velocities(Uf, Uc, U0, msh)
+        real(real64), dimension(:, :), intent(in out) :: Uf
         real(real64), dimension(:, :), intent(in) :: Uc
         real(real64), dimension(2), intent(in) :: U0
         type(Mesh), intent(in) :: msh
@@ -102,8 +102,6 @@ contains
                     n1 = msh % faces(i) % face_nodes(1)
                     n2 = msh % faces(i) % face_nodes(2)
                     Uf(i, :) = 0. ! set Uf = 0. for stability
-                    Un(n1, :) = 0.
-                    Un(n2, :) = 0.
                 end if
             else if (trim(msh % faces(i) % face_type) == 'INLET') then
                 Uf(i, :) = U0
